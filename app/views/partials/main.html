@@ -1,13 +1,13 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>Hi</h1>
-  <p class="lead">
-    <img src="images/icon.png" alt="loerm"><br>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">get it</a></p>
-</div>
+
+ <form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="enteryourname">Name</label>
+    <input type="text" class="form-control" placeholder="Enter your name">
+  </div>
+  <button type="submit" class="btn btn-default">Send</button>
+</form> 
 
 <div class="row marketing">
   <div ng-repeat="datum in someData">
