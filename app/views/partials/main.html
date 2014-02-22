@@ -1,0 +1,21 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="jumbotron">
+  <h1>Hi</h1>
+  <p class="lead">
+    <img src="images/icon.png" alt="loerm"><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#">get it</a></p>
+</div>
+
+<div class="row marketing">
+  <div ng-repeat="datum in someData">
+      <h4>{{datum.name}}</h4>
+      <p>{{datum.info}}</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>the footer</p>
+</div>
