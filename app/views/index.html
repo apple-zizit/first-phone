@@ -14,30 +14,76 @@
     <!-- build:css(app) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/metro-ui-css/css/metro-bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/metro-ui-css/css/metro-bootstrap-responsive.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/phone.metro.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="avnerPhone3App">
+  <body class="metro" style="" ng-app="phoneApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <![endif]-->  
+      <div class="container">
+        <header class="margin20 nrm nlm">
+            <div class="clearfix">
+                <div class="place-right">
+                    <form>
+                        <div class="input-control text size6 margin20 nrm">
+                            <input type="text" name="q" placeholder="Search...">
+                            <button class="btn-search"></button>
+                        </div>
+                    </form>
+                </div>
+                <a class="place-left" href="#" title="">
+                    <h1>AVNER PHONE</h1>
+                </a>
+            </div>
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+            <div class="main-menu-wrapper">
+                <ul class="horizontal-menu nlm">
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">sports</a></li>
+                    <li><a href="#">entertainment</a></li>
+                    <li><a href="#">money</a></li>
+                    <li><a href="#">autos</a></li>
+                    <li><a href="#">living</a></li>
+                    <li><a href="#">health</a></li>
+                    <li class="place-right">
+                        <a href="#" class="dropdown-toggle">options</a>
+                        <ul class="dropdown-menu place-right" data-show="hover">
+                            <li><a href="#">Go to Classic MSN</a></li>
+                            <li><a href="#">MSN Worldwide</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <div class="main-content clearfix">
+            <div class="tile quadro double-vertical ol-transparent">
+                <div ui-view="viewRegister"></div>
+            </div>
+            <div class="tile quadro double-vertical ol-transparent"></div>
+        </div> <!-- End of tiles -->
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+        <footer>
+            <div class="bottom-menu-wrapper">
+                <ul class="horizontal-menu compact">
+                    <li>© 2014 Metro UI CSS</li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+  
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -53,13 +99,15 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/navbar.js"></script>
+        <script src="bower_components/jquery.ui/ui/jquery.ui.widget.js"></script>
+        <script src="bower_components/metro-ui-css/min/metro.min.js"></script>
+        <script src="scripts/phoneApp.js"></script>
+  
         <!-- endbuild -->
 </body>
 </html>
