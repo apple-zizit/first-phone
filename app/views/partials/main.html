@@ -4,9 +4,9 @@
  <form class="form-inline" role="form">
   <div class="form-group">
     <label class="sr-only" for="enteryourname">Name</label>
-    <input type="text" class="form-control" placeholder="Enter your name">
+    <input type="text" class="form-control" placeholder="Enter your name" ng-model="name">
   </div>
-  <button type="submit" class="btn btn-default">Register</button>
+  <button type="submit" class="btn btn-default" ng-click="post_data()">Register</button>
 </form> 
 
 <div class="row marketing">
