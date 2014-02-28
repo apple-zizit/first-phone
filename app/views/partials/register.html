@@ -1,6 +1,21 @@
-<!-- <div data-role="input-control">
-	<input type="text" placeholder="Enter your name" autofocus="">
-	<button>REGISTER</button>
-</div>	 -->
 
-just partial
+
+<div class="tile quadro double-vertical ol-transparent">
+	<div data-role="input-control">
+		<input type="text" placeholder="Enter your name" autofocus="" ng-model="currentName">
+		<button ng-click="register()">REGISTER</button>
+	</div>	
+</div>
+<div class="tile quadro double-vertical ol-transparent" style="overflow-y: auto;">
+	<h2>Currently online</h2>
+
+		<div class="listview-outlook" data-role="listview" >
+			<a class="list" href="#" ng-repeat="user in onlineUsers" ng-class="{marked: user.name == currentName}">
+				<div class="list-content">
+					<span class="list-title">{{user.name}}@metroui.net</span>
+					<span class="list-subtitle">MetroUI: News on 26/10/2013</span>
+					<span class="list-remark">Hello friend! Newest for Metro UI CSS</span>
+				</div>
+			</a>
+		</div>
+</div>	
