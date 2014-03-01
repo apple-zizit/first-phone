@@ -4,19 +4,54 @@
 
 var registerCtrl =  function($scope, $state, $http) {
 
+	$scope.registredUser = undefined;
+
 	$scope.register = function () {
+
+		if ($scope.registredUser === $scope.currentName) {
+			console.log("user aleray registered");
+			return;
+		};
+
+		var registration = {
+			previous: $scope.registredUser ? $scope.registredUser : "",
+			name: $scope.currentName
+		}
+
     	$http({
 		    method: 'POST',
 		    url: '/api/register',
-		    data: "name=" + $scope.currentName,
-		    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+		    data: registration,
+		    // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+		    headers: {'Content-Type': 'application/json; charset=utf-8'}
+		});
+
+		$scope.registredUser=$scope.currentName;
+    }
+
+    $scope.send = function () {
+
+
+    	var messageToSend = {
+    		name: $scope.currentName,
+    		message: $scope.message
+    	}
+
+    	$http({
+		    method: 'POST',
+		    url: '/api/send_message',
+		    data: messageToSend,
+		    headers: {'Content-Type': 'application/json; charset=utf-8'}
 		});
     }
 
     setInterval(function () {
     	$http.get('/api/online').success(function(users) {
-      	$scope.onlineUsers = users;
-    });
+      		$scope.onlineUsers = users;
+    	});
+   		$http.get('/api/messages').success(function(messages) {
+      		$scope.chats = messages;
+    	});
     }, 2000);
 
 };

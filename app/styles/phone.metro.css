@@ -2,3 +2,28 @@
 .container {
     width: 1040px;
 }
+
+.chat-container {
+	padding: 10px;
+}
+
+.chat-ballon-user {
+	width: 60px;
+	left: 58%;
+	margin: 10px 0 0 0;
+}
+
+.chat-ballon-friend {
+	width: 60px;
+	left: 10px;
+	margin: 10px 0 0 0;
+}
+
+.send-form {
+	bottom: 0;
+	position: absolute;
+}
+
+.send-form input {
+	width: 444px;
+}
